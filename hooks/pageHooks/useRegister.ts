@@ -49,5 +49,9 @@ export const useRegister = () => {
     createUser.mutate(values);
   }
 
-  return { get: { form }, set: {}, on: { onSubmit } };
+  return {
+    get: { form, loading: createUser.isLoading },
+    set: {},
+    on: { onSubmit },
+  };
 };

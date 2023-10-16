@@ -34,6 +34,7 @@ export const useLogin = () => {
   const loginUser = useMutation({
     mutationFn: async (data: { email: string; password: string }) =>
       await loginUserApi(data),
+
     onSuccess: ({ data }) => {
       encryptTokenAndSetLocalStorage(data.authorization.token);
       addUser({ ...data.user, expiredAt: data.authorization.expires_at });
@@ -55,5 +56,9 @@ export const useLogin = () => {
     loginUser.mutate(values);
   }
 
-  return { get: { form }, set: {}, on: { onSubmit } };
+  return {
+    get: { form, loading: loginUser.isLoading },
+    set: {},
+    on: { onSubmit },
+  };
 };

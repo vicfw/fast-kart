@@ -84,7 +84,7 @@ const LoginPage = () => {
                 <p className="text-sm text-md">رمز عبور خود را فراموش کردم</p>
               </div>
 
-              <Button className="w-full" type="submit">
+              <Button className="w-full" type="submit" disabled={get.loading}>
                 ورود
               </Button>
             </form>

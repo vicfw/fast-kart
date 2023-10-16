@@ -119,7 +119,7 @@ const RegisterPage = () => {
                   )}
                 />
 
-                <Button className="w-full" type="submit">
+                <Button className="w-full" type="submit" disabled={get.loading}>
                   ثبت نام
                 </Button>
               </form>

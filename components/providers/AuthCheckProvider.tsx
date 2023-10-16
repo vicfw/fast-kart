@@ -8,9 +8,10 @@ const AuthCheckProvider = () => {
   const { removeUser, addUser } = useUserStore((state) => state);
   useEffect(() => {
     const storage = localStorage.getItem(userStateStorageKey);
+    if (!storage) return;
     const parseStorage = JSON.parse(storage ?? "");
-    const user = parseStorage.state.user;
-    const expiredAt = parseStorage.state.user.expiredAt;
+    const user = parseStorage.state?.user;
+    const expiredAt = parseStorage.stated?.user?.expiredAt;
 
     const isExp = new Date(expiredAt) <= new Date();
     if (isExp) {

@@ -1,9 +1,6 @@
 import { useToast } from "@/components/ui/use-toast";
 import { loginUserApi } from "@/lib/api/user";
-import {
-  decryptToken,
-  encryptTokenAndSetLocalStorage,
-} from "@/lib/common/utils";
+import { decryptToken, encryptTokenAndSetLocalStorage } from "@/lib/utils";
 import { LOGIN_INCORRECT_CREDENTIALS } from "@/lib/constants/serverErrorMesages";
 import { useUserStore } from "@/lib/store/userStore";
 import { loginSchema } from "@/utils/validations/auth/login-validation";

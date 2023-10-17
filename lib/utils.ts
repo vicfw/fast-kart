@@ -1,7 +1,7 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import CryptoJS from "crypto-js";
-import { userStateStorageKey } from "../constants/globalConstants";
+import { userStateStorageKey } from "./constants/globalConstants";
 import { log } from "console";
 
 export function cn(...inputs: ClassValue[]) {
